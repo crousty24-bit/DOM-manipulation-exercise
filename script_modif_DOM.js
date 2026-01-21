@@ -28,15 +28,24 @@ function changeLogoName(){
   //newNav[0].style.fontSize = "2em";
   newNav[0].setAttribute("style", "color: red; background: black; font-size: 2em;");
 }
-changeLogoName()
+changeLogoName();
 
 // 4. populateImages
 function populateImages(){
-  const cards = document.getElementsByClassName("col-md-4");
-  //console.log(cards);
-  for (let i = 0; i <= cards.length; i++){
+  const cards = document.querySelectorAll("div.col-md-4");
+  for (let i = 0; i < cards.length; i++){
     let img = cards[i].querySelector(".card-img-top");
     img.setAttribute("src", imagesArray[i]);
   }
 }
-populateImages()
+populateImages();
+
+// 5. deleteLastCards
+function deleteLastCards(){
+  const cards = document.querySelectorAll("div.col-md-4");
+  //console.log(cards)
+  for (let i = cards.length - 1; i >= cards.length - 3; i--){
+    cards[i].remove();
+  }
+}
+deleteLastCards();
