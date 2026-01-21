@@ -1,3 +1,5 @@
+let imagesArray = ["https://img.icons8.com/color/480/000000/html-5.png", "https://img.icons8.com/color/480/000000/css3.png", "https://img.icons8.com/color/480/000000/javascript.png", "https://img.icons8.com/color/480/000000/ruby-programming-language.png", "https://img.icons8.com/color/480/000000/bootstrap.png", "https://img.icons8.com/color/480/000000/github.png", "https://i.imgur.com/bJE9Pka.png", "https://avatars2.githubusercontent.com/u/25484553?s=200&v=4", "https://img.icons8.com/color/480/000000/heroku.png"];
+
 // 1. changeTitles
 function changeTitles(){
   document.querySelector(".jumbotron-heading").textContent = "Ce que j'ai appris à THP"; // return first & only 1 element matching selector
@@ -28,3 +30,13 @@ function changeLogoName(){
 }
 changeLogoName()
 
+// 4. populateImages
+function populateImages(){
+  const cards = document.getElementsByClassName("col-md-4");
+  //console.log(cards);
+  for (let i = 0; i <= cards.length; i++){
+    let img = cards[i].querySelector(".card-img-top");
+    img.setAttribute("src", imagesArray[i]);
+  }
+}
+populateImages()
